@@ -16,7 +16,6 @@ const Navbar = () => {
         </button>
         <img src="src/assets/AGH-logo.jpg" alt="Logo" className="h-10" />
       </div>
-
       {/* Center: Nav Links (hidden on mobile) */}
       <ul className="hidden md:flex gap-6 text-md text-black font-medium">
         <li className="cursor-pointer hover:text-red-500">Home</li>
@@ -35,7 +34,6 @@ const Navbar = () => {
         </li>
         <li className="cursor-pointer hover:text-red-500">Leaderboard</li>
       </ul>
-
       {/* Right: User Info (hidden on small screens) */}
       <div className="hidden md:flex items-center gap-4">
         <img
@@ -62,7 +60,6 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
-
       {/* Mobile Drawer */}
       {isOpen && (
         <div className="absolute top-16 left-0 right-0 bg-white shadow-lg p-4 md:hidden z-50 ml-10">
