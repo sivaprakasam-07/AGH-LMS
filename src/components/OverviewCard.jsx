@@ -29,7 +29,7 @@ const OverviewCard = () => {
   ];
 
   return (
-    <div className="bg-white shadow-md rounded-2xl p-4">
+    <div className="bg-white shadow-md rounded-2xl p-4.5">
       <h3 className="font-semibold text-lg mb-4">Overview</h3>
       <div className="grid grid-cols-2 gap-4">
         {stats.map((item, index) => (
