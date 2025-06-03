@@ -17,8 +17,9 @@ const students = [
 const StudentTable = () => {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-md w-full overflow-x-auto">
-      <div className="flex flex-col md:flex-row justify-between gap-4 mb-6">
-        <div className="relative flex items-center w-full max-w-sm">
+      {/* Search & Filters */}
+      <div className="flex flex-col lg:flex-row justify-between gap-4 mb-6">
+        <div className="relative flex items-center w-full lg:max-w-sm">
           <FiSearch className="absolute left-3 text-gray-400" />
           <input
             type="text"
@@ -38,7 +39,10 @@ const StudentTable = () => {
           ))}
         </div>
       </div>
-        <table className="w-full text-sm text-left rounded-2xl">
+
+      {/* Table */}
+      <div className="w-full overflow-x-auto">
+        <table className="w-full text-sm text-left rounded-2xl min-w-[900px]">
           <thead className="bg-gray-200 text-gray-500 font-semibold">
             <tr>
               <th className="py-5 px-4 rounded-tl-xl rounded-bl-xl">Rank</th>
@@ -76,16 +80,19 @@ const StudentTable = () => {
             ))}
           </tbody>
         </table>
-        <div className="flex justify-center items-center gap-6 mt-6">
-          <button className="p-2 rounded-full hover:bg-gray-100">
-            <ChevronLeft size={18} />
-          </button>
-          <span className="px-4.5 py-2 rounded-lg border text-sm font-medium">1</span>
-          <button className="p-2 rounded-full hover:bg-gray-100">
-            <ChevronRight size={18} />
-          </button>
-        </div>
       </div>
+
+      {/* Pagination */}
+      <div className="flex justify-center items-center gap-6 mt-6">
+        <button className="p-2 rounded-full hover:bg-gray-100">
+          <ChevronLeft size={18} />
+        </button>
+        <span className="px-4.5 py-2 rounded-lg border text-sm font-medium">1</span>
+        <button className="p-2 rounded-full hover:bg-gray-100">
+          <ChevronRight size={18} />
+        </button>
+      </div>
+    </div>
   );
 };
 

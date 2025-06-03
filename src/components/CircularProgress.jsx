@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell } from 'recharts';
 
 const CircularProgress = ({ pass = 90, fail = 30 }) => {
   const total = pass + fail;
@@ -8,9 +8,10 @@ const CircularProgress = ({ pass = 90, fail = 30 }) => {
     { name: 'Fail', value: fail },
   ];
   const gradientId = "passGradient";
+
   return (
-    <div className="bg-white shadow-md p-5 rounded-2xl w-full max-w-xs flex flex-col items-center justify-center mt-6 mr-40">
-      <h3 className="font-semibold text-lg mb-6">Pass Percentage</h3>
+    <div className="bg-white shadow-md p-5 rounded-2xl w-full max-w-xl flex flex-col items-center justify-center mt-6 md:mr-40 mx-auto">
+      <h3 className="font-semibold text-lg mb-6 text-center md:text-left">Pass Percentage</h3>
       <div className="relative flex items-center justify-center w-[180px] h-[120px]">
         <svg width="0" height="0">
           <defs>
@@ -20,13 +21,13 @@ const CircularProgress = ({ pass = 90, fail = 30 }) => {
             </linearGradient>
           </defs>
         </svg>
-        <PieChart width={160} height={160}>
+        <PieChart width={160} height={120}>
           <Pie
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={55}
-            outerRadius={75}
+            innerRadius={40}
+            outerRadius={61}
             startAngle={90}
             endAngle={-270}
             dataKey="value"
@@ -35,12 +36,9 @@ const CircularProgress = ({ pass = 90, fail = 30 }) => {
             <Cell fill="#E5E7EB" />
           </Pie>
         </PieChart>
-        {/* Center percentage label */}
-        <div className="absolute text-2xl text-gray-800">
-          {percentage}%
-        </div>
+        <div className="absolute text-xl text-gray-800">{percentage}%</div>
       </div>
-      <p className="mt-6 text-sm text-gray-500 font-bold text-center">
+      <p className="mt-4 text-sm text-gray-500 font-bold text-center">
         Pass : {pass} | Fail : {fail}
       </p>
     </div>
