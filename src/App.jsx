@@ -7,8 +7,8 @@ import StudentTable from './components/StudentTable';
 
 import {
   AppWrapper,
-  ContentContainer,
-  CardSection,
+  Container as ContentContainer,
+  CardFlexContainer as CardSection,
   CardWrapper,
   TableWrapper
 } from './App.styles';

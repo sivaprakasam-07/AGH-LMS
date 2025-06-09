@@ -5,6 +5,7 @@ import {
   StatsGrid,
   StatItem,
   StatIcon,
+  StatTextContainer, // Added
   StatLabel,
   StatValue,
 } from './OverviewCard.styles';
@@ -44,10 +45,10 @@ const OverviewCard = () => {
         {stats.map((item, index) => (
           <StatItem key={index}>
             <StatIcon bg={item.bg}>{item.icon}</StatIcon>
-            <div>
+            <StatTextContainer>
               <StatLabel>{item.label}</StatLabel>
               <StatValue>{item.value}</StatValue>
-            </div>
+            </StatTextContainer>
           </StatItem>
         ))}
       </StatsGrid>

@@ -30,6 +30,7 @@ export const CardWrapper = styled.div`
 
   @media (min-width: 768px) {
     flex: 1 1 0; /* Allows cards to grow and shrink equally, taking available space in a row */
+    min-width: 0; /* Allow flex items to shrink below their content size if necessary */
     /* The actual card component inside will be centered by justify-content if its intrinsic width is smaller */
   }
 `;

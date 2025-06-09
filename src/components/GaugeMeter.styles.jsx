@@ -9,7 +9,8 @@ export const Container = styled.div`
   /* max-width: 24rem; */ /* Removed */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center; /* Added to center children horizontally */
+  justify-content: center; /* Changed from space-between to center to vertically center content */
   height: 100%; /* Allow card to stretch to wrapper height */
 `;
 
@@ -67,7 +68,7 @@ export const InfoBox = styled.div`
 
   @media (min-width: 640px) { /* As per original style, can adjust if needed */
     flex-direction: row;
-    align-items: center;
+    align-items: baseline; /* Changed from center to baseline */
     text-align: left; /* Revert to left align for wider InfoBox */
   }
 `;
