@@ -6,7 +6,6 @@ export const Container = styled.div`
   padding: 0.625rem;
   box-shadow: 0 1px 6px 0 rgba(0,0,0,0.08);
   width: 100%;
-  max-width: 24rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
