@@ -6,20 +6,14 @@ export const Container = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 1.25rem;
   border-radius: 1rem;
-  width: 100%;
-  max-width: 36rem;
+  width: 100%; /* Ensure card takes full width of its wrapper */
+  /* max-width: 36rem; */ /* Removed to allow wrapper to control width */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 1.5rem;
-  margin-right: 0;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (min-width: 768px) {
-    margin-right: 10rem;
-  }
+  /* margin-top: 1.5rem; */ /* Margin will be handled by parent gap */
+  height: 100%; /* Allow card to stretch to wrapper height */
 `;
 
 export const Title = styled.h3`
@@ -27,10 +21,6 @@ export const Title = styled.h3`
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
   text-align: center;
-
-  @media (min-width: 768px) {
-    text-align: left;
-  }
 `;
 
 export const ChartWrapper = styled.div`

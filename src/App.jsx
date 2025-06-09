@@ -5,30 +5,36 @@ import OverviewCard from './components/OverviewCard';
 import GaugeMeter from './components/GaugeMeter';
 import StudentTable from './components/StudentTable';
 
+import {
+  AppWrapper,
+  ContentContainer,
+  CardSection,
+  CardWrapper,
+  TableWrapper
+} from './App.styles';
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
+    <AppWrapper>
       <Navbar />
-      <div className="px-6 py-4 max-w-7xl mt-10 mx-auto">
+      <ContentContainer>
         <TestInfoHeader />
-        <div className="flex flex-col lg:flex-row gap-4 mt-6">
-          <div className="w-full lg:w-1/4">
+        <CardSection>
+          <CardWrapper className="circular-progress-wrapper">
             <CircularProgress pass={90} fail={30} />
-          </div>
-          <div className="w-full lg:w-2/4 mt-6">
+          </CardWrapper>
+          <CardWrapper className="overview-card-wrapper">
             <OverviewCard />
-          </div>
-          <div className="w-full lg:w-1/4 mt-6">
+          </CardWrapper>
+          <CardWrapper className="gauge-meter-wrapper">
             <GaugeMeter score={51} />
-          </div>
-        </div>
-        {/* <DashboardStats /> */}
-        <div className='mt-6'>
+          </CardWrapper>
+        </CardSection>
+        <TableWrapper>
           <StudentTable />
-        </div>
-      </div>
-    </div>
+        </TableWrapper>
+      </ContentContainer>
+    </AppWrapper>
   );
 };
 

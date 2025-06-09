@@ -5,15 +5,12 @@ export const Container = styled.div`
   border-radius: 1rem;
   padding: 0.625rem;
   box-shadow: 0 1px 6px 0 rgba(0,0,0,0.08);
-  width: 100%;
+  width: 100%; /* Ensure card takes full width of its wrapper */
+  /* max-width: 24rem; */ /* Removed */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: auto;
-
-  @media (min-width: 640px) {
-    height: 16.25rem;
-  }
+  height: 100%; /* Allow card to stretch to wrapper height */
 `;
 
 export const Title = styled.h2`
@@ -21,6 +18,11 @@ export const Title = styled.h2`
   font-weight: 600;
   margin-bottom: 0.5rem;
   margin-top: 0;
+  text-align: center; /* Center title for 540x720, 853x1280 */
+
+  @media (min-width: 768px) { /* Revert to left align for wider screens if preferred */
+    text-align: left;
+  }
 `;
 
 export const GaugeWrapper = styled.div`
@@ -52,19 +54,21 @@ export const ScoreText = styled.p`
 `;
 
 export const InfoBox = styled.div`
-  margin-top: 0.1 rem;
+  margin-top: 0.1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Default for mobile */
   gap: 0.5rem;
   background: #f9fafb;
   padding: 0.75rem 0.75rem;
   border-radius: 0.75rem;
   font-size: 0.95rem;
   color: #374151;
+  text-align: center; /* Center InfoBox text for 540x720, 853x1280 */
 
-  @media (min-width: 640px) {
+  @media (min-width: 640px) { /* As per original style, can adjust if needed */
     flex-direction: row;
     align-items: center;
+    text-align: left; /* Revert to left align for wider InfoBox */
   }
 `;
 
