@@ -1,4 +1,11 @@
 import { PieChart, Pie, Cell } from 'recharts';
+import {
+  Container,
+  Title,
+  ChartWrapper,
+  PercentageText,
+  Stats
+} from './CircularProgress.styles';
 
 const CircularProgress = ({ pass = 90, fail = 30 }) => {
   const total = pass + fail;
@@ -10,9 +17,9 @@ const CircularProgress = ({ pass = 90, fail = 30 }) => {
   const gradientId = "passGradient";
 
   return (
-    <div className="bg-white shadow-md p-5 rounded-2xl w-full max-w-xl flex flex-col items-center justify-center mt-6 md:mr-40 mx-auto">
-      <h3 className="font-semibold text-lg mb-6 text-center md:text-left">Pass Percentage</h3>
-      <div className="relative flex items-center justify-center w-[180px] h-[120px]">
+    <Container>
+      <Title>Pass Percentage</Title>
+      <ChartWrapper>
         <svg width="0" height="0">
           <defs>
             <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -36,12 +43,10 @@ const CircularProgress = ({ pass = 90, fail = 30 }) => {
             <Cell fill="#E5E7EB" />
           </Pie>
         </PieChart>
-        <div className="absolute text-xl text-gray-800">{percentage}%</div>
-      </div>
-      <p className="mt-4 text-sm text-gray-500 font-bold text-center">
-        Pass : {pass} | Fail : {fail}
-      </p>
-    </div>
+        <PercentageText>{percentage}%</PercentageText>
+      </ChartWrapper>
+      <Stats>Pass : {pass} | Fail : {fail}</Stats>
+    </Container>
   );
 };
 

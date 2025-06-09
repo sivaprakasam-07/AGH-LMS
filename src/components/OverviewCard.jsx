@@ -1,53 +1,57 @@
 import { Users, Target, CheckCircle, Timer } from 'lucide-react';
+import {
+  CardContainer,
+  CardTitle,
+  StatsGrid,
+  StatItem,
+  StatIcon,
+  StatLabel,
+  StatValue,
+} from './OverviewCard.styles';
 
 const OverviewCard = () => {
   const stats = [
     {
       label: 'Students Appeared',
       value: 120,
-      icon: <Users className="text-white" size={20} />,
-      bg: 'bg-[#5C4DFF]', // Purple
+      icon: <Users color="#fff" size={20} />,
+      bg: '#5C4DFF', // Purple
     },
     {
       label: 'Total Marks',
       value: 20,
-      icon: <Target className="text-white" size={20} />,
-      bg: 'bg-[#FFB020]', // Orange
+      icon: <Target color="#fff" size={20} />,
+      bg: '#FFB020', // Orange
     },
     {
       label: 'Total No. of Ques.',
       value: 40,
-      icon: <CheckCircle className="text-white" size={20} />,
-      bg: 'bg-[#FF5A5F]', // Red
+      icon: <CheckCircle color="#fff" size={20} />,
+      bg: '#FF5A5F', // Red
     },
     {
       label: 'Average Time Taken',
       value: '50 Min',
-      icon: <Timer className="text-white" size={20} />,
-      bg: 'bg-[#7B61FF]', // Indigo
+      icon: <Timer color="#fff" size={20} />,
+      bg: '#7B61FF', // Indigo
     },
   ];
 
   return (
-    <div className="bg-white shadow-md rounded-2xl p-4.5 w-full">
-      <h3 className="font-semibold text-lg mb-4">Overview</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <CardContainer>
+      <CardTitle>Overview</CardTitle>
+      <StatsGrid>
         {stats.map((item, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-4 bg-gray-50 rounded-xl p-4"
-          >
-            <div className={`p-3 rounded-full ${item.bg}`}>
-              {item.icon}
-            </div>
+          <StatItem key={index}>
+            <StatIcon bg={item.bg}>{item.icon}</StatIcon>
             <div>
-              <p className="text-sm text-gray-600">{item.label}</p>
-              <p className="text-lg font-semibold text-gray-800">{item.value}</p>
+              <StatLabel>{item.label}</StatLabel>
+              <StatValue>{item.value}</StatValue>
             </div>
-          </div>
+          </StatItem>
         ))}
-      </div>
-    </div>
+      </StatsGrid>
+    </CardContainer>
   );
 };
 

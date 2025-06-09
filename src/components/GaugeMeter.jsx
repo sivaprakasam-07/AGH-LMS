@@ -1,15 +1,26 @@
 import { FiInfo } from 'react-icons/fi';
+import {
+  Container,
+  Title,
+  GaugeWrapper,
+  GaugeSVG,
+  GaugeLabels,
+  ScoreText,
+  InfoBox,
+  InfoIcon,
+  InfoScore,
+  InfoSuspicious,
+} from './GaugeMeter.styles';
 
 const GaugeMeter = ({ score }) => {
   const angle = (score / 100) * 180;
 
   return (
-    <div className="bg-white rounded-2xl p-2.5 shadow-md w-full max-w-sm flex flex-col justify-between h-auto sm:h-65">
+    <Container>
       <div>
-        <h2 className="text-lg font-semibold mb-2 mt-0">Flagged Test Attempts</h2>
-
-        <div className="relative w-full flex justify-center items-center">
-          <svg viewBox="0 0 200 120" className="w-44 h-28">
+        <Title>Flagged Test Attempts</Title>
+        <GaugeWrapper>
+          <GaugeSVG viewBox="0 0 200 120">
             <path
               d="M 10 100 A 90 90 0 0 1 190 100"
               fill="none"
@@ -38,23 +49,25 @@ const GaugeMeter = ({ score }) => {
             />
             <circle cx="100" cy="100" r="10" fill="#f43f5e" />
             <circle cx="100" cy="100" r="5" fill="black" />
-          </svg>
-        </div>
-        <div className="flex justify-between px-3 text-sm text-gray-500">
+          </GaugeSVG>
+        </GaugeWrapper>
+        <GaugeLabels>
           <span>Low</span>
           <span>Score</span>
           <span>High</span>
-        </div>
-        <p className="text-center text-xl font-bold mt-1">{score}%</p>
+        </GaugeLabels>
+        <ScoreText>{score}%</ScoreText>
       </div>
-      <div className="mt-2 flex flex-col sm:flex-row sm:items-center gap-2 bg-gray-50 px-3 py-2 rounded-xl text-sm text-gray-700">
-        <FiInfo className="text-lg" />
+      <InfoBox>
+        <InfoIcon>
+          <FiInfo />
+        </InfoIcon>
         <span>
-          <span className="font-medium">{score}%</span> indicates{' '}
-          <span className="text-red-500 font-medium">Suspicious Activity</span>
+          <InfoScore>{score}%</InfoScore> indicates{' '}
+          <InfoSuspicious>Suspicious Activity</InfoSuspicious>
         </span>
-      </div>
-    </div>
+      </InfoBox>
+    </Container>
   );
 };
 
