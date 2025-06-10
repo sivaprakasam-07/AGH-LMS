@@ -15,10 +15,9 @@ import {
   Pagination,
   PageNumber,
   IconButton
-} from './StudentTable.styles';
-
-import { FiSearch } from 'react-icons/fi';
-import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
+} from './StudentTable.styles.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faChevronLeft, faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const students = [
   { rank: '01', name: 'Luca Romano', dept: 'CSE', year: 2025, marks: 19, duration: '35 Min', email: 'luca@gmail.com', suspicious: false },
@@ -38,14 +37,14 @@ const StudentTable = () => {
     <TableContainer>
       <TopBar>
         <SearchWrapper>
-          <FiSearch style={{ position: 'absolute', left: '12px', color: '#9ca3af' }} />
+          <FontAwesomeIcon icon={faSearch} className="search-icon" />
           <SearchInput type="text" placeholder="Search here..." />
         </SearchWrapper>
         <FilterButtonGroup>
           {['Suspicious', 'Branch', 'Year'].map((label) => (
             <FilterButton key={label}>
               {label}
-              <ChevronDown size={16} />
+              <FontAwesomeIcon icon={faChevronDown} size="xs" />
             </FilterButton>
           ))}
         </FilterButtonGroup>
@@ -85,9 +84,9 @@ const StudentTable = () => {
       </StyledTable>
 
       <Pagination>
-        <IconButton><ChevronLeft size={18} /></IconButton>
+        <IconButton><FontAwesomeIcon icon={faChevronLeft} size="xs" /></IconButton>
         <PageNumber>1</PageNumber>
-        <IconButton><ChevronRight size={18} /></IconButton>
+        <IconButton><FontAwesomeIcon icon={faChevronRight} size="xs" /></IconButton>
       </Pagination>
     </TableContainer>
   );

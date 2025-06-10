@@ -17,7 +17,7 @@ import {
   MobileDrawer,
   MobileNavLinks,
   MobileNavLink,
-} from './Navbar.styles';
+} from './Navbar.styles.js';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -5,7 +5,7 @@ import {
   LabelRow,
   Title,
   DateBox,
-} from './TestInfoHeader.styles';
+} from './TestInfoHeader.styles.js';
 
 import { PieChart, CalendarDays } from 'lucide-react';
 

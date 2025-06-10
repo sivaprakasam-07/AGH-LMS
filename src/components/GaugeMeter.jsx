@@ -1,4 +1,5 @@
-import { FiInfo } from 'react-icons/fi';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import {
   Container,
   Title,
@@ -10,7 +11,7 @@ import {
   InfoIcon,
   InfoScore,
   InfoSuspicious,
-} from './GaugeMeter.styles';
+} from './GaugeMeter.styles.js';
 
 const GaugeMeter = ({ score }) => {
   const angle = (score / 100) * 180;
@@ -60,7 +61,7 @@ const GaugeMeter = ({ score }) => {
       </div>
       <InfoBox>
         <InfoIcon>
-          <FiInfo />
+          <FontAwesomeIcon icon={faInfoCircle} />
         </InfoIcon>
         <span>
           <InfoScore>{score}%</InfoScore> indicates{' '}

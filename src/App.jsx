@@ -11,7 +11,7 @@ import {
   CardFlexContainer as CardSection,
   CardWrapper,
   TableWrapper
-} from './App.styles';
+} from './App.styles.js';
 
 const App = () => {
   return (

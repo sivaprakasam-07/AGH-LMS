@@ -8,7 +8,7 @@ import {
   StatTextContainer, // Added
   StatLabel,
   StatValue,
-} from './OverviewCard.styles';
+} from './OverviewCard.styles.js';
 
 const OverviewCard = () => {
   const stats = [

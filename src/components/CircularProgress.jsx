@@ -5,7 +5,7 @@ import {
   ChartWrapper,
   PercentageText,
   Stats
-} from './CircularProgress.styles';
+} from './CircularProgress.styles.js';
 
 const CircularProgress = ({ pass = 90, fail = 30 }) => {
   const total = pass + fail;
