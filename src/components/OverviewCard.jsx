@@ -1,4 +1,5 @@
-import { Users, Target, CheckCircle, Timer } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUsers, faBullseye, faCheckCircle, faClock } from '@fortawesome/free-solid-svg-icons';
 import {
   CardContainer,
   CardTitle,
@@ -15,25 +16,25 @@ const OverviewCard = () => {
     {
       label: 'Students Appeared',
       value: 120,
-      icon: <Users color="#fff" size={20} />,
+      icon: <FontAwesomeIcon icon={faUsers} style={{ color: "#fff", fontSize: "20px" }} />,
       bg: '#5C4DFF', // Purple
     },
     {
       label: 'Total Marks',
       value: 20,
-      icon: <Target color="#fff" size={20} />,
+      icon: <FontAwesomeIcon icon={faBullseye} style={{ color: "#fff", fontSize: "20px" }} />,
       bg: '#FFB020', // Orange
     },
     {
       label: 'Total No. of Ques.',
       value: 40,
-      icon: <CheckCircle color="#fff" size={20} />,
+      icon: <FontAwesomeIcon icon={faCheckCircle} style={{ color: "#fff", fontSize: "20px" }} />,
       bg: '#FF5A5F', // Red
     },
     {
       label: 'Average Time Taken',
       value: '50 Min',
-      icon: <Timer color="#fff" size={20} />,
+      icon: <FontAwesomeIcon icon={faClock} style={{ color: "#fff", fontSize: "20px" }} />,
       bg: '#7B61FF', // Indigo
     },
   ];

@@ -16,6 +16,7 @@ import {
   PageNumber,
   IconButton
 } from './StudentTable.styles.js';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faChevronLeft, faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -37,14 +38,14 @@ const StudentTable = () => {
     <TableContainer>
       <TopBar>
         <SearchWrapper>
-          <FontAwesomeIcon icon={faSearch} className="search-icon" />
+          <FontAwesomeIcon icon={faSearch} style={{ position: 'absolute', left: '12px', color: '#9ca3af' }} />
           <SearchInput type="text" placeholder="Search here..." />
         </SearchWrapper>
         <FilterButtonGroup>
           {['Suspicious', 'Branch', 'Year'].map((label) => (
             <FilterButton key={label}>
               {label}
-              <FontAwesomeIcon icon={faChevronDown} size="xs" />
+              <FontAwesomeIcon icon={faChevronDown} size="xs" style={{ marginLeft: '4px' }} />
             </FilterButton>
           ))}
         </FilterButtonGroup>

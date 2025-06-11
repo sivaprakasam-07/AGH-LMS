@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import {
   Nav,
   Left,
@@ -27,7 +28,7 @@ const Navbar = () => {
       {/* Left: Logo + Hamburger */}
       <Left>
         <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <FontAwesomeIcon icon={faTimes} size="lg" /> : <FontAwesomeIcon icon={faBars} size="lg" />}
         </HamburgerButton>
         <Logo src="src/assets/AGH-logo.jpg" alt="Logo" />
       </Left>
